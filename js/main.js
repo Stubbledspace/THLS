@@ -20,13 +20,37 @@
 
 
     // Date and time picker
-    $('.date').datetimepicker({
-        format: 'L'
-    });
-    $('.time').datetimepicker({
-        format: 'LT'
-    });
-    
+    const datetimeSlotPicker = document.querySelector('datetime-slot-picker');
+     
+     /* LISTENER FOR DATE AND TIME SLOT CHANGES */
+     datetimeSlotPicker.addEventListener('slotUpdate', function(event){ console.log('Updated Slot: ', event.detail) });
+      
+     /* INITIALIZING THE AVAILABLE SLOTS. TIME SLOTS IS OPTIONAL */
+     datetimeSlotPicker.slots = [
+       {
+         "date": 'Sun, 20 Nov 2022',
+         "timeSlots": [
+           '6 AM - 7 AM',
+           '7 AM - 8 AM',
+           '8 AM - 9 AM',
+           '9 AM - 10 AM',
+           '10 AM - 11 AM',
+           '11 AM - 12 PM',
+           '12 PM - 1 PM',
+           '1 PM - 2 PM',
+           '2 PM - 3 PM',
+           '3 PM - 4 PM',
+           '4 PM - 5 PM',
+           '5 PM - 6 PM',
+           '6 PM - 7 PM',
+           '7 PM - 8 PM',
+           '8 PM - 9 PM',
+           '9 PM - 10 PM',  
+           '10 PM - 11 PM',
+           '11 PM - 12 AM'     
+          ]
+       },
+     ];
     
     // Back to top button
     $(window).scroll(function () {
